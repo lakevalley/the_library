@@ -18,10 +18,14 @@ class Program
         {
             loadManager.LoadFile(nonfictionFile, nonFiction);
         }
+        
+        Menu menu = new(fiction, nonFiction);
+        menu.Running();
+        
         SaveManager saveManager = new();
         saveManager.SaveFile(fiction, fictionFile);
         saveManager.SaveFile(nonFiction, nonfictionFile);
-        Menu menu = new(fiction, nonFiction);
+        
 
         
     }
