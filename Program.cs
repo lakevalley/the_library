@@ -4,21 +4,23 @@ class Program
 {
     static void Main(string[] args)
     {
+        string fictionFile = "fiction.txt";
+        string nonfictionFile = "nonFiction.txt";
         Fiction fiction = new();
         NonFiction nonFiction = new();
         LoadManager loadManager = new();
-        if (File.Exists("fiction.txt"))
+        if (File.Exists(fictionFile))
         {
-            loadManager.LoadFile("fiction.txt", fiction);
+            loadManager.LoadFile(fictionFile, fiction);
         }
 
-        if (File.Exists("nonFiction.txt"))
+        if (File.Exists(nonfictionFile))
         {
-            loadManager.LoadFile("nonFiction.txt", nonFiction);
+            loadManager.LoadFile(nonfictionFile, nonFiction);
         }
         SaveManager saveManager = new();
-        saveManager.SaveFile(fiction, "fiction.txt");
-        saveManager.SaveFile(nonFiction, "nonFiction.txt");
+        saveManager.SaveFile(fiction, fictionFile);
+        saveManager.SaveFile(nonFiction, nonfictionFile);
         Menu menu = new(fiction, nonFiction);
 
         
