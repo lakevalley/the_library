@@ -1,7 +1,7 @@
 TODO:
 
 X SaveFile();
-- LoadFile(); som laddar in sparade böcker och visar dem: David/Robert
-- While-loop med bool-villkor som driver programmet: Malin/André
-- Lägg till fler böcker: David/Robert
+- LoadFile(); som laddar in sparade bï¿½cker och visar dem: David/Robert
+- While-loop med bool-villkor som driver programmet: Malin/Andre
+- Lï¿½gg till fler bï¿½cker: David/Robert
 - Uppdatera Menu
