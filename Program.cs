@@ -6,10 +6,12 @@ class Program
     {
         Fiction fiction = new();
         NonFiction nonFiction = new();
+        
+        Menu menu = new(fiction, nonFiction);
+        menu.Running();
+        
         SaveManager saveManager = new();
         saveManager.SaveFile(fiction, "fiction.txt");
         saveManager.SaveFile(nonFiction, "nonFiciton.txt");
-        Menu menu = new(fiction, nonFiction);
-        menu.Running();
     }
 }
