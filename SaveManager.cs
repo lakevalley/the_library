@@ -9,25 +9,25 @@ namespace The_Library
     public class SaveManager
     {
         
-        public List<string> _savedBooks = new();
-        public string _saveFile = "saveFile.txt";
+        
 
 
-        public void SaveFile(Shelf shelf)
+        public void SaveFile(Shelf shelf, string saveFile)
         {
-            foreach (Book book in shelf.Books)
-            {
-                _savedBooks.Add($"{book.Title};{book.Author};{book.Publisher}");
-                
-                
-            }
+            List<string> _savedBooks = new();
 
-            File.WriteAllLines("saveFile.txt", _savedBooks);
+                foreach (Book book in shelf.Books)
+                {
+                    _savedBooks.Add($"{book.Title};{book.Author};{book.Publisher}");
+                
+                }
+
+                File.WriteAllLines(saveFile, _savedBooks);
             
-            foreach (string book in _savedBooks)
-            {
-                Console.WriteLine(book);
-            }
+                foreach (string book in _savedBooks)
+                {
+                    Console.WriteLine(book);
+                }
         }
     
         
