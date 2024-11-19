@@ -8,8 +8,17 @@ public class Menu
     public Menu(Fiction fiction, NonFiction nonFiction)
     {
         _fiction = fiction;
-        _nonFiction = nonFiction;
-        PrintMenu();
+        _nonFiction = nonFiction; 
+    }
+
+    public void Running()
+    {
+        bool running = true;
+        while (running)
+        {
+            PrintMenu();
+            running = Interact();
+        }
     }
 
     private void PrintMenu()
@@ -22,10 +31,9 @@ public class Menu
         Console.WriteLine("8. Show Non-Fiction books");
         Console.WriteLine("9. Show Fiction books");
         Console.WriteLine("0. Exit");
-        Interact();
     }
 
-    private void Interact()
+    private bool Interact()
     {
         string? option = Console.ReadLine();
 
@@ -112,10 +120,10 @@ public class Menu
 
                 break;
             case "0":
-                Environment.Exit(0);
+                return false;
                 break;
         }
 
-        PrintMenu();
+        return true;
     }
 }
